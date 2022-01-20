@@ -86,6 +86,7 @@ export function Game(props) {
       console.log(data.winner);
       swiper.current.disable();
       document.getElementById("screen_result").style.display = "flex";
+      document.getElementById("screen_result").style.border = (data.winner==1)?"dotted 10px rgb(27, 209, 21)":"dotted 10px red";
       if (
         data.score_left_player == location.state.toWin){
       confetti({
