@@ -1,13 +1,125 @@
-body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  margin: 0 auto;
+  background: rgb(54, 93, 92);
+  background: linear-gradient(
+      0deg,
+      rgba(54, 93, 92, 1) 0%,
+      rgba(88, 145, 157, 1) 32%,
+      rgba(165, 224, 221, 1) 78%
+    )
+    no-repeat center center fixed;
 }
+.main {
+  font-size: 1.8em;
+}
+@media screen and (max-width: 570px) {
+  .main {
+    font-size: initial;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+.btn_validate_home:hover {
+  cursor: initial;
+}
+.svg_choice {
+  width: 100%;
+  height: 100%;
+}
+.right,
+.left {
+  cursor: pointer;
+}
+
+.left:active,
+.right:active,
+.paper:active,
+.rock:active,
+.scissor:active {
+  color: red;
+}
+
+@keyframes clip {
+  from {
+    border-color: chartreuse;
+    background-color: chartreuse;
+  }
+  20%{
+    border-color: black;
+    background-color: unset;
+  }
+  40%{
+    border-color: chartreuse;
+    background-color: chartreuse;
+  }
+  60%{
+    border-color: black;
+    background-color: unset;
+  }
+  to {
+    border-color:black;
+    background-color: unset;
+  }
+}
+
+.tess{
+  animation: 3s 0.5s clip; 
+}
+.tess2{
+  animation: 3s 0.5s clip; 
+}
+
+
+@keyframes zooom {
+  from {
+    width: 3vw;
+    height: 3vh;
+  }
+  20% {
+    width: 20vw;
+    height: 10vh;
+  }
+  50%{
+    width: 30vw;
+    height: 21vh;
+  }
+  80% {
+    width: 45vw;
+    height: 32vh;
+  }
+  to {
+    width: 65vw;
+    height: 50vh;
+  }
+  
+  
+}
+
+#screen_result{
+  height: 50vh;
+  width: 65vw;
+  background-color: #000000be;
+  border: dotted 10px rgb(27, 209, 21);
+  border-radius: 25px;
+  position: absolute;
+  z-index: 1;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+  color: rgb(255, 255, 255);
+  font-size: 2em;
+  animation: 3s  zooom ; 
+};
